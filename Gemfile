@@ -31,6 +31,8 @@ gem 'bootstrap-sass'
 # https://github.com/jugend/amazon-ecs
 gem 'amazon-ecs'
 
+gem 'pry-byebug', group: :development
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -54,5 +56,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
+  
 end
 
