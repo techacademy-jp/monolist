@@ -52,12 +52,12 @@ class User < ActiveRecord::Base
 
   ## TODO 実装
   def have(item)
-    have_items.find_or_create_by(item_id: item.id)
+    haves.find_or_create_by(item_id: item.id)
   end
 
   def unhave(item)
-    have_items = have_items.find_by(item_id: item.id)
-    have_items.destroy if have_items
+    have = haves.find_by(item_id: item.id)
+    have.destroy if have
   end
 
   def have?(item)
@@ -65,12 +65,12 @@ class User < ActiveRecord::Base
   end
 
   def want(item)
-    want_items.find_or_create_by(item_id: item.id)
+    wants.find_or_create_by(item_id: item.id)
   end
 
   def unwant(item)
-    want_items = want_items.find_by(item_id: item.id)
-    want_items.destroy if want_items
+    want = wants.find_by(item_id: item.id)
+    want.destroy if want
   end
 
   def want?(item)
