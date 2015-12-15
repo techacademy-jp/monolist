@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% items.each.with_index(1) do |item,index| %>
+      <div class="item-box">
+        <div class="image">
+          <div class="img-wrap">
+            <% if item.large_image.present? %>
+              <%= image_tag(item.large_image , alt: item.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: item.title) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <strong>[第<%= index %>位 | <%= ranking.values[index-1]%>人]</strong>
+            <%= item.title %> 
+
+          </p>
+        </div>
+        <%= render 'items/action' , item: item if logged_in? %>
+      </div>
+    <% end %>
+  </div>
+</div>
