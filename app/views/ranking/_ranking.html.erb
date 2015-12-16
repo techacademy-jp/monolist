@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container-inner inner-default clearfix">
-    <% items.each.with_index(1) do |item,index| %>
+    <% items.each_with_index do |item,index| %>
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
@@ -13,7 +13,7 @@
         </div>
         <div class="detail">
           <p class="title">
-            <strong>[第<%= index %>位 | <%= ranking.values[index-1]%>人]</strong>
+            <strong>[第<%= (index+1) %>位 | <%= ranking[index] %>人]</strong>
             <%= item.title %> 
 
           </p>
